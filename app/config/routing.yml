@@ -1,0 +1,4 @@
+pfz_blog:
+    resource: "@PfzBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+

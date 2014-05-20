@@ -1,0 +1,24 @@
+pfz_blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PfzBlogBundle:Default:index }
+
+pfz_blog_overview:
+    pattern:  /overview
+    defaults: { _controller: PfzBlogBundle:Default:overview }
+
+pfz_blog_newblog:
+    pattern:  /blogpost/new
+    defaults: { _controller: PfzBlogBundle:Default:newBlog }
+
+pfz_blog_editblog:
+    pattern:  /blogpost/{id}/edit
+    defaults: { _controller: PfzBlogBundle:Default:editBlog }
+
+pfz_blog_viewblog:
+    pattern:  /blogpost/{id}
+    defaults: { _controller: PfzBlogBundle:Default:viewBlog }
+
+
+PfzBlogBundle_comment:
+    resource: "@PfzBlogBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment

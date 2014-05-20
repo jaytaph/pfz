@@ -1,0 +1,7 @@
+parameters:
+#    pfz_blog.example.class: Pfz\BlogBundle\Example
+
+services:
+#    pfz_blog.example:
+#        class: %pfz_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

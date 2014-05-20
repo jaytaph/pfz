@@ -1,0 +1,21 @@
+<body>
+    <h1>Overview</h1>
+
+    {{ workshop | upper }}
+
+    {{ datum | date('Y-m-d H:i:s') }}
+
+
+    {# hier itereer ik blogs #}
+    <ul>
+    {% for blog in blogs %}
+        <li>
+            <font color="red"><blink><a href="{{ url('pfz_blog_viewblog', { 'id' : blog.id } ) }}">{{ blog.title }}</a></font></blink> ({{ blog.comments|length }})
+        </li>
+
+    {% else %}
+        <h1>There are no blogpost</h1>
+    {% endfor %}
+    </ul>
+
+</body>

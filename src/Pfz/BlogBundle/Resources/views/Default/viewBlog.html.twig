@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <font color="red"><blink>{{ blog.title }}</font></blink>
+    <p>{{ blog.content }}</p>
+    {% if blog.author is defined %}
+        <p><a href="mailto:{{ blog.author }}">{{ blog.author | upper }}</a></p>
+    {% endif %}
+
+    <a href="{{ path('pfz_blog_editblog', { 'id' : blog.id }) }}">Edit blogpost</a>
+
+    <hr>
+
+    {% for comment in blog.comments %}
+        <img src="{{ gravatar(comment.email, '50') }}">
+        <strong>{{ comment.name }}</strong>
+        <strong>{{ comment.createdAt | date("F m D") }}</strong>
+        <p>{{ comment.content }}</p>
+    {% else %}
+        There are no comments. Be the first to comment.
+    {% endfor %}
+
+    <hr>
+
+    <a href="{{ path('pfz_blog_overview') }}">Terug</a>
+
+{% endblock %}
